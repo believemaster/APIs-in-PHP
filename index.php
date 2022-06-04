@@ -1,20 +1,35 @@
 <?php
 
-  // In cmd run the program: php index.php and the response will be same as source code of website (this will contains HTML also)
-  // $response = file_get_contents("https://example.com");
-  //
-  // echo $response;
+if(!empty($_GET['name'])) {
 
-  // Making first API call
-  $response = file_get_contents("https://randomuser.me/api");
+  $response = file_get_contents("https://api.agify.io?name={$_GET['name']}");
 
-  // echo $response;   // This will return the JSON of data from the end point of /api
+  $data = json_decode($response, true);
+
+  $age = $data["age"];
+
+}
+
+?>
 
 
-  /*************Decode API results reading JSON in PHP***************/
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>API CALL AGIFY.IO</title>
+  </head>
+  <body>
 
-  $data = json_decode($response, true);     // if second argument is true then it will return associative array if no second argument then normal object response
-  // var_dump($data);
+    <?php if(isset($age)): ?>
+      Age of random Name is: <?= $age ?>
+    <?php endif; ?>
 
-  // to get the value from associative array
-  echo $data["results"][0]["name"]["first"], "\n";    // give first name as response 
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name">
+
+      <button type="submit">Guess Age</button>
+    </form>
+  </body>
+</html>
