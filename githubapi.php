@@ -11,7 +11,8 @@ curl_setopt_array($ch, [
   CURLOPT_URL => "https://api.github.com/user/starred/httpie/httpie",    // github API to check the repo is star or not
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_HTTPHEADER => $headers,
-  CURLOPT_USERAGENT => "believemaster"
+  CURLOPT_USERAGENT => "believemaster",
+  CURLOPT_CUSTOMREQUEST => "DELETE"     // request method to change the method to get a different result. In this case remove star from repo
 ]);
 
 $response = curl_exec($ch);
