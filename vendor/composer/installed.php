@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '7abfe39f7fff94be61e867403d26d08d1715fed8',
+        'reference' => '639f71aa1398925553a63a43a6a013a796cba65f',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '7abfe39f7fff94be61e867403d26d08d1715fed8',
+            'reference' => '639f71aa1398925553a63a43a6a013a796cba65f',
             'dev_requirement' => false,
         ),
         'guzzlehttp/guzzle' => array(
@@ -98,6 +98,15 @@
             'install_path' => __DIR__ . '/../ralouphie/getallheaders',
             'aliases' => array(),
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
+            'dev_requirement' => false,
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v8.8.0',
+            'version' => '8.8.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'reference' => '06bfb65639cfecae7c2b57d340f740599c548753',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
